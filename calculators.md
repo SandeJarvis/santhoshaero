@@ -6,22 +6,32 @@ title: Calculators — Aerodynamics with Santhosh
 <div class="card">
   <div class="pill">Reynolds Number Calculator</div>
   <h1>Reynolds Number Calculator</h1>
-  <p>Enter flow parameters below to compute the Reynolds number (Re = ρVD/μ).</p>
+  <p>
+    The Reynolds number (<em>Re</em>) characterizes the ratio of inertial to viscous forces in a flow and is defined as:
+  </p>
+
+  <div style="background:#eef3f8;padding:1rem;border-radius:10px;margin:1rem 0;font-size:1.1rem;text-align:center;">
+    <strong>Re = (ρ × V × D) / μ</strong>
+    <br>
+    <small>
+      where ρ = density (kg/m³), V = velocity (m/s), D = characteristic length (m), μ = dynamic viscosity (kg/m·s)
+    </small>
+  </div>
 
   <form id="reCalc" style="display:grid;gap:1rem;max-width:420px">
-    <label>Density (ρ) in kg/m³
+    <label>Density (ρ) [kg/m³]
       <input type="number" id="density" placeholder="e.g., 1.225" step="any" required style="width:100%;padding:.6rem;border:1px solid #ccc;border-radius:8px">
     </label>
 
-    <label>Velocity (V) in m/s
+    <label>Velocity (V) [m/s]
       <input type="number" id="velocity" placeholder="e.g., 15" step="any" required style="width:100%;padding:.6rem;border:1px solid #ccc;border-radius:8px">
     </label>
 
-    <label>Characteristic Length (D) in m
+    <label>Characteristic Length (D) [m]
       <input type="number" id="length" placeholder="e.g., 0.5" step="any" required style="width:100%;padding:.6rem;border:1px solid #ccc;border-radius:8px">
     </label>
 
-    <label>Dynamic Viscosity (μ) in kg/m·s
+    <label>Dynamic Viscosity (μ) [kg/m·s]
       <input type="number" id="viscosity" placeholder="e.g., 1.8e-5" step="any" required style="width:100%;padding:.6rem;border:1px solid #ccc;border-radius:8px">
     </label>
 
@@ -47,8 +57,16 @@ function calcReynolds() {
 
   const Re = (rho * V * L) / mu;
   const formatted = Re.toExponential(3);
-  document.getElementById('result').innerHTML = 
-    `Reynolds Number (Re): <span style="color:#0b3a6f;">${formatted}</span>`;
+  
+  let flowType = '';
+  if (Re < 2300) flowType = 'Laminar flow';
+  else if (Re >= 2300 && Re < 4000) flowType = 'Transitional flow';
+  else flowType = 'Turbulent flow';
+
+  document.getElementById('result').innerHTML = `
+    <div style="background:#eef3f8;padding:1rem;border-radius:10px;">
+      <p style="margin:0;">Reynolds Number (Re): <span style="color:#0b3a6f;">${formatted}</span></p>
+      <p style="margin:0.4rem 0 0 0;color:#555;">Flow regime: <strong>${flowType}</strong></p>
+    </div>`;
 }
 </script>
-
