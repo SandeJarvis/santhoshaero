@@ -1,71 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Santhosh Aero</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aerodynamics with Santhosh — About</title>
+  <meta name="description" content="This space is my digital engineering diary, focused on aerodynamics, CFD, and the conceptual design of aircraft and UAVs. It will evolve as I get time and ideas, exploring how air interacts with shape, motion, and performance—connecting fluid-dynamic principles with real design thinking.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f7f9fb;
-      color: #222;
+    :root{
+      --brand:#0b3a6f;
+      --text:#222;
+      --bg:#f7f9fb;
+      --muted:#6b7280;
+      --card:#ffffff;
     }
-    header {
-      background: #002b5c;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
-    nav a {
-      color: white;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
+    header{
+      background:var(--brand);
+      color:#fff;
+      padding:1rem 1.25rem;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .nav{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
     }
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.6;
+    .brand{
+      display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.2px;
     }
-    footer {
-      background: #002b5c;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
+    .brand svg{width:22px;height:22px;opacity:.95}
+    .brand span{font-size:1.05rem}
+    nav a{
+      color:#fff; text-decoration:none; margin-left:1.2rem; font-weight:500;
+      border-bottom:2px solid transparent; padding-bottom:.2rem;
     }
+    nav a:hover{border-color:#fff}
+    main{
+      max-width:900px; margin:2.5rem auto; padding:0 1.25rem;
+    }
+    .card{
+      background:var(--card);
+      border-radius:16px;
+      padding:1.5rem 1.25rem;
+      box-shadow:0 6px 20px rgba(0,0,0,.06);
+    }
+    h1{margin:.2rem 0 1rem 0; font-size:1.9rem; line-height:1.25}
+    .sub{color:var(--muted); margin-top:-.4rem; margin-bottom:1.2rem}
+    .grid{display:grid; grid-template-columns:1fr; gap:1.25rem}
+    @media (min-width:900px){ .grid{grid-template-columns:2fr 1fr} }
+    .pill{
+      display:inline-block; background:#e9eef6; color:#0b335f; padding:.28rem .6rem; border-radius:999px; font-size:.85rem; margin-right:.4rem
+    }
+    footer{
+      background:var(--brand); color:#fff; text-align:center; padding:1rem; margin-top:2.5rem; font-size:.92rem;
+    }
+    .links a{color:var(--brand); text-decoration:none; font-weight:600}
+    .links a:hover{text-decoration:underline}
+    ul.compact{margin:.2rem 0 0 1.2rem; padding:0}
+    ul.compact li{margin:.2rem 0}
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
-    <h2>Santhosh Aero</h2>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="plan-cfd.html">Plan & CFD</a>
-      <a href="calculators.html">Calculators</a>
-    </nav>
+    <div class="nav">
+      <div class="brand" title="Aerodynamics with Santhosh">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="white"><path d="M20.6 11.6c.6-.2.6-1 0-1.2l-8-2.7-2.7-6c-.3-.7-1.3-.7-1.6 0L6.9 5.9 2 7.5c-.8.3-.8 1.3 0 1.6l4.9 1.6 1.4 3.1-2.3 1.1c-.3.2-.5.5-.5.9v1l3.6-1.1 1.6 3.4c.3.7 1.3.7 1.6 0l2.7-6 8-2.7z"/></svg>
+        <span>Aerodynamics with Santhosh</span>
+      </div>
+      <nav>
+        <a href="index.html">About</a>
+        <a href="plan-cfd.html">Plan &amp; CFD</a>
+        <a href="calculators.html">Calculators</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <h1>Welcome to my digital space</h1>
-    <p>
-      This space is my digital engineering diary, focused on aerodynamics, CFD, and the conceptual design of aircraft and UAVs.
-      It will evolve as I get time and ideas, exploring how air interacts with shape, motion, and performance—
-      connecting fluid-dynamic principles with real design thinking.
-    </p>
+    <div class="grid">
+      <section class="card">
+        <div class="pill">About Me</div>
+        <h1>Hello, I’m Santhosh.</h1>
+        <p class="sub">Aerospace engineer focused on aerodynamics, CFD, experimental flow visualization, and conceptual design of aircraft & UAVs.</p>
+
+        <p>
+          I’m driven by curiosity about how air interacts with shape, motion, and performance. My work spans aerodynamics, CFD, lab methods, and design. I currently work at the Leibniz Institute for Plasma Science and Technology (INP Greifswald), exploring cold plasma–flow interactions and developing automated experimental systems that improve precision and repeatability in research.
+        </p>
+        <p>
+          Previously at The ePlane Company, I combined simulation and experiments to advance eVTOL aerodynamics—building rigs for thrust/torque measurement, validating CFD, and iterating on ducts and stators. Earlier roles at IIT Kanpur and Laboratoire PRISME (France) sharpened my understanding of unsteady aerodynamics, flow visualization, and experimental fluid mechanics.
+        </p>
+        <p>
+          I enjoy bridging simulation and experimentation using coding, ROS, IoT, and rapid prototyping to make complex systems smarter and more reliable. This site is my evolving engineering diary—where I collect ideas, tools, and design perspectives as time allows.
+        </p>
+
+        <div class="links">
+          <p><strong>Get in touch:</strong>
+            <a href="mailto:santhoshaero008@gmail.com">Email</a> ·
+            <a href="https://www.linkedin.com/in/santhosh-kumar-2369989a/" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="pill">Focus Areas</div>
+        <ul class="compact">
+          <li>Aerodynamics & performance</li>
+          <li>CFD (ANSYS Fluent, SimScale)</li>
+          <li>Experimental methods (PIV, BOS, rigs)</li>
+          <li>Conceptual design: aircraft & UAVs</li>
+          <li>ROS, IoT & automation for experiments</li>
+        </ul>
+        <p class="muted" style="margin-top:1rem">
+          Languages: EN, HI, TA, KN · Basics: FR, DE
+        </p>
+      </aside>
+    </div>
   </main>
 
   <footer>
-    © 2025 Santhosh Aero | All rights reserved
+    © 2025 Santhosh | Aerodynamics with Santhosh
   </footer>
 </body>
 </html>
-
