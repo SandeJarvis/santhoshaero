@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+  <style>
+    :root{--brand:#0b3a6f;--text:#222;--bg:#f7f9fb;--card:#fff;--muted:#6b7280}
+    *{box-sizing:border-box}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    header{background:var(--brand);color:#fff;padding:1rem 1.25rem}
+    .nav{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+    .brand svg{width:22px;height:22px}
+    nav a{color:#fff;text-decoration:none;margin-left:1.2rem;font-weight:500;border-bottom:2px solid transparent;padding-bottom:.2rem}
+    nav a:hover{border-color:#fff}
+    main{max-width:900px;margin:2.5rem auto;padding:0 1.25rem}
+    .card{background:var(--card);border-radius:16px;padding:1.5rem 1.25rem;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    .pill{display:inline-block;background:#e9eef6;color:#0b335f;padding:.28rem .6rem;border-radius:999px;font-size:.85rem;margin-bottom:.8rem}
+    .sub{color:var(--muted);margin:.2rem 0 1.2rem 0}
+    ul.compact{margin:.4rem 0 0 1rem;padding:0}ul.compact li{margin:.3rem 0}
+    footer{background:var(--brand);color:#fff;text-align:center;padding:1rem;margin-top:2.5rem;font-size:.92rem}
+  </style>
+</head>
+<body>
+  {% include header.html %}
+  <main>{{ content }}</main>
+  {% include footer.html %}
+</body>
+</html>
 
