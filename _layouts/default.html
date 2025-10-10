@@ -9,29 +9,16 @@
 <body class="site">
   {% include header.html %}
 
-  <!-- ONLY THIS MIDDLE SCROLLS -->
+  <!-- ONLY MIDDLE SCROLLS; space reserved for fixed bars in CSS -->
   <main class="container site-content" id="content">
     {{ content }}
   </main>
 
   {% include footer.html %}
-<script>
-  (function(){
-    var el = document.getElementById('email-link');
-    if(!el) return;
-    el.addEventListener('click', function(e){
-      e.preventDefault();
-      var addr = el.dataset.u + '@' + el.dataset.d + '.' + el.dataset.t; // santhoshaero008@gmail.com
-      var sub  = encodeURIComponent('Hello from the website');
-      window.location.href = 'mailto:' + addr + '?subject=' + sub;
-    });
-  })();
-</script>
 
-  <!-- Dropdown click support + email assembler -->
   <script>
     (function () {
-      // Aero Lab: click toggle + outside click close
+      // --- Aero Lab: click toggle + outside click close ---
       var dd = document.getElementById('aerolab');
       if (dd) {
         var btn = dd.querySelector('.aerolab-btn');
@@ -44,17 +31,14 @@
         });
       }
 
-      // Email: assemble mailto only on click (email not visible in HTML)
+      // --- Email: assemble mailto on click (address hidden in HTML) ---
       var el = document.getElementById('email-link');
       if (el) {
-        el.addEventListener('click', function () {
-          var user = el.getAttribute('data-u');
-          var dom  = el.getAttribute('data-d');
-          var tld  = el.getAttribute('data-t');
-          var addr = user + '@' + dom + '.' + tld; // santhoshaero008@gmail.com
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          var addr = el.dataset.u + '@' + el.dataset.d + '.' + el.dataset.t; // santhoshaero008@gmail.com
           var sub  = encodeURIComponent('Hello from the website');
-          var href = 'mailto:' + addr + '?subject=' + sub;
-          window.location.href = href;
+          window.location.href = 'mailto:' + addr + '?subject=' + sub;
         });
       }
     })();
