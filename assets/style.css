@@ -1,152 +1,58 @@
 /* ============================================
-   GLOBAL NAVBAR & HEADER STYLES
-   Author: Santhosh
-   Purpose: Clean horizontal navbar with Aero Lab dropdown
+   NAVBAR / HEADER
 ============================================ */
-
-/* ---------- HEADER CONTAINER ---------- */
-.site-header {
-  background: #0a3369;                    /* deep blue bar */
-  font-family: "Inter", sans-serif;       /* consistent font */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);  /* subtle depth */
+.site-header { background:#0a3369; box-shadow:0 2px 6px rgba(0,0,0,.2); }
+.site-header .nav{
+  max-width:1200px; margin:0 auto; padding:.8rem 1.2rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
 }
 
-/* ---------- FLEX LAYOUT ---------- */
-.site-header .nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.8rem 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* brand left, links right */
-  flex-wrap: wrap;
-}
+/* Brand (plain text) */
+.site-header .brand{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:700;font-size:1.1rem}
+.site-header .brand svg{width:20px;height:20px;fill:#fff}
 
-/* ---------- BRAND ---------- */
-.site-header .brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-.site-header .brand svg {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
-}
+/* Main links (horizontal) */
+.site-header .primary-nav{display:flex;align-items:center;gap:1.5rem}
+.site-header .primary-nav a{color:#fff;text-decoration:none;font-weight:700;font-size:1rem}
+.site-header .primary-nav a:hover{text-decoration:underline}
 
 /* ============================================
-   PRIMARY NAVIGATION LINKS
+   AERO LAB DROPDOWN (namespaced, resists theme)
 ============================================ */
-.site-header .primary-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem; /* space between About | Aero Lab | Contact */
+.aerolab-dropdown{position:relative;display:inline-block !important}
+
+/* Button looks like a link */
+.aerolab-btn{
+  color:#fff;font-weight:700;font-size:1rem;background:transparent;border:0;padding:0;cursor:pointer;
+}
+.aerolab-btn:hover{text-decoration:underline}
+
+/* Panel hidden by default; opened on hover OR .open class */
+#aerolab > #aerolab-panel{
+  display:none !important;
+  position:absolute; top:140%; left:0;
+  background:#111; min-width:240px; border-radius:8px;
+  box-shadow:0 8px 20px rgba(0,0,0,.4); padding:.5rem 0; z-index:9999;
+}
+/* show on hover */
+#aerolab:hover > #aerolab-panel{ display:block !important; }
+/* show when toggled by JS click */
+#aerolab.open > #aerolab-panel{ display:block !important; }
+
+/* Items */
+#aerolab-panel a{
+  display:block !important; color:#fff !important; text-decoration:none !important;
+  padding:.55rem 1rem; font-weight:600; opacity:.95;
+}
+#aerolab-panel a:hover{background:#1a1a1a;opacity:1}
+
+/* Layout tweaks on small screens */
+@media (max-width:768px){
+  .site-header .nav{flex-direction:column;align-items:flex-start}
+  .site-header .primary-nav{flex-wrap:wrap;gap:1rem}
+  #aerolab > #aerolab-panel{position:static;box-shadow:none;background:#0c1e3e;border-radius:6px}
+  #aerolab-panel a:hover{background:#122e64}
 }
 
-.site-header .primary-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: opacity 0.2s ease-in-out;
-}
-.site-header .primary-nav a:hover {
-  opacity: 0.85;
-  text-decoration: underline;
-}
-
-/* ============================================
-   AERO LAB DROPDOWN (namespaced)
-   Notes:
-   - Hidden by default using !important.
-   - Shown only when hovered.
-============================================ */
-
-/* Dropdown container */
-.aerolab-dropdown {
-  position: relative;
-  display: inline-block !important; /* keep on one line */
-}
-
-/* Dropdown button (looks like link) */
-.aerolab-btn {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1rem;
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  transition: opacity 0.2s ease-in-out;
-}
-.aerolab-btn:hover {
-  opacity: 0.85;
-  text-decoration: underline;
-}
-
-/* Dropdown panel (hidden initially) */
-.site-header .primary-nav #aerolab > #aerolab-panel {
-  display: none !important;              /* ensure hidden even if theme interferes */
-  position: absolute;
-  top: 140%;                             /* below the button */
-  left: 0;
-  background: #111;
-  min-width: 240px;
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  padding: 0.5rem 0;
-  z-index: 9999;
-}
-
-/* Show panel on hover */
-.site-header .primary-nav #aerolab:hover > #aerolab-panel {
-  display: block !important;
-}
-
-/* Links inside dropdown */
-.site-header .primary-nav #aerolab-panel a {
-  display: block !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  padding: 0.55rem 1rem;
-  font-weight: 500 !important;
-  opacity: 0.95;
-  transition: background 0.2s ease-in-out;
-}
-.site-header .primary-nav #aerolab-panel a:hover {
-  background: #1a1a1a;
-  opacity: 1;
-}
-
-/* ============================================
-   RESPONSIVE DESIGN
-============================================ */
-@media (max-width: 768px) {
-  .site-header .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-  .site-header .primary-nav {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  .site-header .primary-nav #aerolab > #aerolab-panel {
-    position: static;
-    box-shadow: none;
-    background: #0c1e3e;
-    border-radius: 0.4rem;
-  }
-  .site-header .primary-nav #aerolab-panel a:hover {
-    background: #122e64;
-  }
-}
-
-/* ============================================
-   OPTIONAL UTILITIES (future)
-   You can extend here with color vars, buttons, etc.
-============================================ */
+/* Optional: content container spacing */
+.container{max-width:1100px;margin:2rem auto;padding:0 1rem}
