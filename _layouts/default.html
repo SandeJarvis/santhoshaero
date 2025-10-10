@@ -9,11 +9,43 @@
 <body class="site">
   {% include header.html %}
 
-  <main class="container site-content">
+  <!-- ONLY THIS MIDDLE SCROLLS -->
+  <main class="container site-content" id="content">
     {{ content }}
   </main>
 
   {% include footer.html %}
+
+  <!-- Dropdown click support + email assembler -->
+  <script>
+    (function () {
+      // Aero Lab: click toggle + outside click close
+      var dd = document.getElementById('aerolab');
+      if (dd) {
+        var btn = dd.querySelector('.aerolab-btn');
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          dd.classList.toggle('open');
+        });
+        document.addEventListener('click', function (e) {
+          if (!dd.contains(e.target)) dd.classList.remove('open');
+        });
+      }
+
+      // Email: assemble mailto only on click (email not visible in HTML)
+      var el = document.getElementById('email-link');
+      if (el) {
+        el.addEventListener('click', function () {
+          var user = el.getAttribute('data-u');
+          var dom  = el.getAttribute('data-d');
+          var tld  = el.getAttribute('data-t');
+          var addr = user + '@' + dom + '.' + tld; // santhoshaero008@gmail.com
+          var sub  = encodeURIComponent('Hello from the website');
+          var href = 'mailto:' + addr + '?subject=' + sub;
+          window.location.href = href;
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
- 
