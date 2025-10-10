@@ -9,7 +9,6 @@
 <body class="site">
   {% include header.html %}
 
-  <!-- ONLY MIDDLE SCROLLS; space reserved for fixed bars in CSS -->
   <main class="container site-content" id="content">
     {{ content }}
   </main>
@@ -18,7 +17,7 @@
 
   <script>
     (function () {
-      // --- Aero Lab: click toggle + outside click close ---
+      // Aero Lab: click toggle + outside click close
       var dd = document.getElementById('aerolab');
       if (dd) {
         var btn = dd.querySelector('.aerolab-btn');
@@ -31,15 +30,12 @@
         });
       }
 
-      // --- Email: assemble mailto on click (address hidden in HTML) ---
+      // Email: (re)build mailto from hidden bits (works even if JS was blocked)
       var el = document.getElementById('email-link');
-      if (el) {
-        el.addEventListener('click', function (e) {
-          e.preventDefault();
-          var addr = el.dataset.u + '@' + el.dataset.d + '.' + el.dataset.t; // santhoshaero008@gmail.com
-          var sub  = encodeURIComponent('Hello from the website');
-          window.location.href = 'mailto:' + addr + '?subject=' + sub;
-        });
+      if (el && el.dataset && el.dataset.u) {
+        var addr = el.dataset.u + '@' + el.dataset.d + '.' + el.dataset.t;
+        var sub  = encodeURIComponent('Hello from the website');
+        el.setAttribute('href', 'mailto:' + addr + '?subject=' + sub);
       }
     })();
   </script>
