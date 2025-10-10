@@ -1,1 +1,9 @@
-<footer>© 2025 Santhosh | Aerodynamics with Santhosh</footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© {{ "now" | date: "%Y" }} Santhosh · Aerodynamics with Santhosh</span>
+    <nav class="footer-nav">
+      <a href="{{ '/' | relative_url }}">About</a>
+      <a href="{{ '/contact' | relative_url }}">Contact</a>
+    </nav>
+  </div>
+</footer>
