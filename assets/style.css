@@ -1,1 +1,36 @@
+/* Basic nav layout */
+.nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.nav .brand { display:flex; align-items:center; gap:.5rem; }
+.nav .brand svg { width:22px; height:22px; }
+.nav nav { display:flex; align-items:center; gap:1rem; }
+.nav a { text-decoration:none; }
+
+/* Dropdown core */
+.nav-dropdown { position:relative; }
+.nav-dropdown > summary { list-style:none; cursor:pointer; user-select:none; }
+.nav-dropdown > summary::-webkit-details-marker { display:none; }
+.nav-dropdown[open] > summary { opacity:.95; }
+
+/* Dropdown panel (simple list) */
+.dropdown-list {
+  position:absolute; top:100%; left:0;
+  display:flex; flex-direction:column;
+  gap:.25rem; padding:.6rem; margin-top:.5rem;
+  background:#111; color:#fff;
+  border:1px solid #333; border-radius:.6rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+  min-width:260px; z-index:20;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  padding:.4rem .6rem; border-radius:.4rem;
+  text-decoration:none; color:#fff; opacity:.95;
+}
+.dropdown-item:hover { background:#1b1b1b; text-decoration:none; opacity:1; }
+
+/* Mobile tweaks */
+@media (max-width: 640px){
+  .dropdown-list { min-width: 200px; }
+}
 
