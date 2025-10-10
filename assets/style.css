@@ -1,53 +1,102 @@
-/* --- FORCE the dropdown to be closed by default --- */
-.site-header .primary-nav .dropdown > .dropdown-content {
-  display: none !important;            /* hide by default */
+/* ============================================
+  GLOBAL NAVBAR STYLING
+============================================ */
+.site-header {
+  background: #0a3369;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ---------- LAYOUT ---------- */
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- BRAND (icon + text) ---------- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.brand svg { width: 20px; height: 20px; fill: #fff; }
+
+/* ---------- NAV LINKS (horizontal) ---------- */
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.primary-nav a,
+.dropbtn {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity .2s ease-in-out;
+}
+.primary-nav a:hover,
+.dropbtn:hover {
+  opacity: .8;
+  text-decoration: underline;
+}
+
+/* ============================================
+  DROPDOWN MENU
+============================================ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide dropdown by default */
+.dropdown-content {
+  display: none;
   position: absolute;
   top: 140%;
   left: 0;
   background: #111;
   min-width: 240px;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   box-shadow: 0 8px 20px rgba(0,0,0,.4);
   padding: 0.5rem 0;
-  z-index: 9999;                       /* sit on top of theme elements */
+  z-index: 9999;
 }
 
-/* Show only when hovering the dropdown container */
-.site-header .primary-nav .dropdown:hover > .dropdown-content {
-  display: block !important;
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-/* Make sure dropdown container stays inline (so nav is one line) */
-.site-header .primary-nav .dropdown {
-  position: relative;
-  display: inline-block !important;
+/* Dropdown links */
+.dropdown-content a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.55rem 1rem;
+  font-weight: 500;
+  opacity: 0.95;
 }
-
-/* Button looks like a link; no native button styles */
-.site-header .primary-nav .dropbtn {
-  background: transparent !important;
-  border: 0 !important;
-  padding: 0 !important;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: #fff !important;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* Items inside the dropdown panel */
-.site-header .primary-nav .dropdown-content a {
-  display: block !important;
-  color: #fff !important;
-  text-decoration: none !important;
-  padding: 0.55rem 1rem !important;
-  font-weight: 500 !important;
-  opacity: .95;
-}
-.site-header .primary-nav .dropdown-content a:hover {
-  background: #1a1a1a !important;
+.dropdown-content a:hover {
+  background: #1a1a1a;
   opacity: 1;
+}
+
+/* ============================================
+  RESPONSIVE (Optional)
+============================================ */
+@media (max-width: 768px) {
+  .nav { flex-direction: column; gap: 0.6rem; }
+  .primary-nav { flex-wrap: wrap; justify-content: center; }
 }
