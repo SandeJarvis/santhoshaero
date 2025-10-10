@@ -1,42 +1,81 @@
 /* ============================================
-   NAVBAR / HEADER
+   GLOBAL BASE
+   - Restores the clean, centered look (cards, spacing, fonts)
+   - Keeps the working Aero Lab dropdown
 ============================================ */
-.site-header { background:#0a3369; box-shadow:0 2px 6px rgba(0,0,0,.2); }
-.site-header .nav{
-  max-width:1200px; margin:0 auto; padding:.8rem 1.2rem;
-  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+:root{
+  --bg: #f3f6fb;
+  --text: #0b1220;
+  --muted: #5b6b86;
+  --brand: #0a3369;
+  --card: #ffffff;
+  --ring: rgba(10,51,105,.12);
+  --shadow: 0 6px 24px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+  --radius: 14px;
 }
 
-/* Brand (plain text) */
-.site-header .brand{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:700;font-size:1.1rem}
+* { box-sizing: border-box; }
+
+html, body {
+  padding: 0; margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3 { margin: .4rem 0 1rem; line-height: 1.25; }
+h1 { font-size: 2.1rem; font-weight: 800; }
+h2 { font-size: 1.4rem; font-weight: 700; color: var(--text); }
+h3 { font-size: 1rem;   font-weight: 700; color: var(--text); }
+p  { margin: .75rem 0; color: var(--text); }
+small, .muted { color: var(--muted); }
+
+/* ============================================
+   LAYOUT CONTAINER
+============================================ */
+.container{
+  max-width: 980px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+/* ============================================
+   HEADER / NAV (keeps your working dropdown)
+============================================ */
+.site-header { background: var(--brand); box-shadow: 0 2px 6px rgba(0,0,0,.18); }
+.site-header .nav{
+  max-width: 1100px; margin: 0 auto; padding: .8rem 1.2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+
+/* Brand */
+.site-header .brand{display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:800}
 .site-header .brand svg{width:20px;height:20px;fill:#fff}
 
-/* Main links (horizontal) */
+/* Horizontal links */
 .site-header .primary-nav{display:flex;align-items:center;gap:1.5rem}
 .site-header .primary-nav a{color:#fff;text-decoration:none;font-weight:700;font-size:1rem}
 .site-header .primary-nav a:hover{text-decoration:underline}
 
-/* ============================================
-   AERO LAB DROPDOWN (namespaced, resists theme)
-============================================ */
-.aerolab-dropdown{position:relative;display:inline-block !important}
-
-/* Button looks like a link */
+/* Dropdown (namespaced, same behavior as before) */
+.aerolab-dropdown{position:relative;display:inline-block}
 .aerolab-btn{
-  color:#fff;font-weight:700;font-size:1rem;background:transparent;border:0;padding:0;cursor:pointer;
+  color:#fff;font-weight:800;font-size:1rem;background:transparent;border:0;padding:0;cursor:pointer;
 }
 .aerolab-btn:hover{text-decoration:underline}
 
-/* Panel hidden by default; opened on hover OR .open class */
+/* Panel hidden by default; show on hover OR .open (click) */
 #aerolab > #aerolab-panel{
   display:none !important;
   position:absolute; top:140%; left:0;
-  background:#111; min-width:240px; border-radius:8px;
-  box-shadow:0 8px 20px rgba(0,0,0,.4); padding:.5rem 0; z-index:9999;
+  background:#111; min-width:240px; border-radius:12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  padding:.5rem 0; z-index:9999;
 }
-/* show on hover */
-#aerolab:hover > #aerolab-panel{ display:block !important; }
-/* show when toggled by JS click */
+#aerolab:hover > #aerolab-panel,
 #aerolab.open > #aerolab-panel{ display:block !important; }
 
 /* Items */
@@ -46,13 +85,50 @@
 }
 #aerolab-panel a:hover{background:#1a1a1a;opacity:1}
 
-/* Layout tweaks on small screens */
-@media (max-width:768px){
-  .site-header .nav{flex-direction:column;align-items:flex-start}
-  .site-header .primary-nav{flex-wrap:wrap;gap:1rem}
-  #aerolab > #aerolab-panel{position:static;box-shadow:none;background:#0c1e3e;border-radius:6px}
-  #aerolab-panel a:hover{background:#122e64}
+/* ============================================
+   CARD + UI PRIMITIVES (for your index/aerolab pages)
+============================================ */
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.2rem;
+  margin: 1rem 0;
+  border: 1px solid var(--ring);
 }
 
-/* Optional: content container spacing */
-.container{max-width:1100px;margin:2rem auto;padding:0 1rem}
+.pill{
+  display: inline-block;
+  font-size: .9rem;
+  padding: .25rem .6rem;
+  background: #e8eef9;
+  color: #173a6b;
+  border-radius: 999px;
+  border: 1px solid rgba(23,58,107,.2);
+  margin-bottom: .6rem;
+}
+
+ul.compact{ list-style: disc; margin: .2rem 0 .2rem 1.25rem; padding: 0; }
+ul.compact li{ margin: .2rem 0; }
+
+/* ============================================
+   FOOTER
+============================================ */
+.site-footer{
+  max-width: 1100px;
+  margin: 2rem auto 2rem;
+  padding: 0 1rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px){
+  .site-header .nav{flex-direction:column;gap:.6rem}
+  .site-header .primary-nav{flex-wrap:wrap;gap:1rem;justify-content:center}
+  #aerolab > #aerolab-panel{position:static;box-shadow:none;background:#0c1e3e;border-radius:10px}
+  #aerolab-panel a:hover{background:#122e64}
+  .container{margin:1.25rem auto 3rem}
+}
