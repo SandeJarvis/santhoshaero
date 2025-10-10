@@ -1,14 +1,17 @@
 /* ===== Base + layout ===== */
 :root{
-  --bg:#f3f6fb; 
-  --text:#0b1220; 
+  --bg:#f3f6fb;
+  --text:#0b1220;
   --muted:#5b6b86;
-  --brand:#0a3369;          /* header + footer color */
-  --brand-2:#0c2b56;        /* secondary blue (unused now, for future) */
+  --brand:#0a3369;        /* header + footer color */
   --card:#fff;
   --ring:rgba(10,51,105,.12);
   --shadow:0 6px 24px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
   --radius:14px;
+
+  /* fixed bars */
+  --header-h: 64px;
+  --footer-h: 56px;
 }
 
 html,body{
@@ -19,52 +22,37 @@ html,body{
   font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
 }
 
-/* Sticky footer layout */
-.site{
-  min-height:100dvh;
-  display:flex;
-  flex-direction:column;
+/* Only middle scrolls */
+.site{height:100vh; overflow:hidden; display:block;}
+.site-content{
+  height:calc(100vh - var(--header-h) - var(--footer-h));
+  overflow:auto;
+  margin-top:var(--header-h);
+  margin-bottom:var(--footer-h);
 }
-.site-content{flex:1}
 
-/* ===== Header/Nav ===== */
+/* ===== Fixed Header ===== */
 .site-header{
   background:var(--brand);
   box-shadow:0 2px 6px rgba(0,0,0,.18);
+  position:fixed; inset:0 0 auto 0;  /* top:0; left:0; right:0 */
+  height:var(--header-h);
+  z-index:1000;
 }
 .site-header .nav{
-  max-width:1100px;
-  margin:0 auto;
-  padding:.8rem 1.2rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
+  max-width:1100px; height:100%;
+  margin:0 auto; padding:0 .8rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
 }
 .site-header .brand{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  color:#fff;
-  font-weight:800;
+  display:flex; align-items:center; gap:.5rem; color:#fff; font-weight:800;
 }
-.site-header .brand svg{
-  width:20px;
-  height:20px;
-  fill:#fff;
-}
-.site-header .primary-nav{
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-}
+.site-header .brand svg{ width:20px; height:20px; fill:#fff; }
+.site-header .primary-nav{ display:flex; align-items:center; gap:1.5rem; }
 .site-header .primary-nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  font-size:1rem;
+  color:#fff; text-decoration:none; font-weight:700; font-size:1rem;
 }
-.site-header .primary-nav a:hover{text-decoration:underline}
+.site-header .primary-nav a:hover{ text-decoration:underline; }
 
 /* Make Aero Lab button identical to links */
 .aerolab-btn{
@@ -75,66 +63,37 @@ html,body{
   font-size:1rem;
   line-height:1;
 }
-.aerolab-btn:hover{text-decoration:underline}
+.aerolab-btn:hover{ text-decoration:underline; }
 
-/* ===== Dropdown (works on hover and click via .open) ===== */
-#aerolab{
-  position:relative;
-  display:inline-block;
-}
+/* Dropdown (hover + click via .open) */
+#aerolab{ position:relative; display:inline-block; }
 
-/* HOVER BRIDGE: invisible strip filling the gap so hover doesn't break */
+/* Hover bridge to prevent closing when moving mouse down */
 #aerolab::after{
-  content:"";
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  height:10px;              /* bridge thickness */
-  pointer-events:none;      /* don't block clicks */
+  content:""; position:absolute; left:0; top:100%;
+  width:100%; height:10px; pointer-events:none;
 }
 
-/* Panel: hidden by default; placed just below the button without gaps */
+/* Panel */
 #aerolab > #aerolab-panel{
   display:none !important;
-  position:absolute;
-  top:calc(100% + 6px);     /* closer to the button (no jump) */
-  left:0;
-  background:#111;
-  min-width:240px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  padding:.5rem 0;
-  z-index:9999;
+  position:absolute; top:calc(100% + 6px); left:0;
+  background:#111; min-width:240px; border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4); padding:.5rem 0;
+  z-index:2000;
 }
-
-/* Keep open on hover, focus (keyboard), or when JS adds .open */
 #aerolab:hover > #aerolab-panel,
 #aerolab:focus-within > #aerolab-panel,
-#aerolab.open > #aerolab-panel{
-  display:block !important;
-}
+#aerolab.open > #aerolab-panel{ display:block !important; }
 
-/* Items */
 #aerolab-panel a{
-  display:block !important;
-  color:#fff !important;
-  text-decoration:none !important;
-  padding:.55rem 1rem;
-  font-weight:600;
-  opacity:.95;
+  display:block !important; color:#fff !important; text-decoration:none !important;
+  padding:.55rem 1rem; font-weight:600; opacity:.95;
 }
-#aerolab-panel a:hover{
-  background:#1a1a1a;
-  opacity:1;
-}
+#aerolab-panel a:hover{ background:#1a1a1a; opacity:1; }
 
-/* ===== Cards (for content) ===== */
-.container{
-  max-width:980px;
-  margin:2rem auto 4rem;
-  padding:0 1rem;
-}
+/* ===== Cards / content ===== */
+.container{ max-width:980px; margin:0 auto; padding:1.2rem 1rem 2rem; }
 .card{
   background:var(--card);
   border-radius:var(--radius);
@@ -144,63 +103,39 @@ html,body{
   border:1px solid var(--ring);
 }
 .pill{
-  display:inline-block;
-  font-size:.9rem;
-  padding:.25rem .6rem;
-  background:#e8eef9;
-  color:#173a6b;
-  border-radius:999px;
-  border:1px solid rgba(23,58,107,.2);
-  margin-bottom:.6rem;
+  display:inline-block; font-size:.9rem; padding:.25rem .6rem;
+  background:#e8eef9; color:#173a6b; border-radius:999px;
+  border:1px solid rgba(23,58,107,.2); margin-bottom:.6rem;
 }
+ul.compact{ list-style:disc; margin:.2rem 0 .2rem 1.25rem; padding:0; }
+ul.compact li{ margin:.2rem 0; }
 
-/* ===== Footer (blue bar, always at bottom) ===== */
+/* ===== Fixed Footer ===== */
 .site-footer{
-  background:var(--brand);   /* same color as header */
-  color:#fff;
-  margin-top:auto;
+  background:var(--brand); color:#fff;
+  position:fixed; inset:auto 0 0 0;   /* bottom:0; left:0; right:0 */
+  height:var(--footer-h);
+  z-index:1000;
 }
 .site-footer .footer-inner{
-  max-width:1100px;
-  margin:0 auto;
-  padding:.9rem 1.2rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
+  max-width:1100px; height:100%;
+  margin:0 auto; padding:0 .8rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
 }
-.site-footer .footer-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:1rem;
-  font-weight:600;
+
+/* Footer actions (icons) */
+.footer-actions{ display:flex; align-items:center; gap:.75rem; }
+.icon-link{
+  display:inline-flex; align-items:center; gap:.4rem;
+  color:#fff; text-decoration:none; font-weight:600; background:transparent; border:0; cursor:pointer;
 }
-.site-footer .footer-nav a:hover{
-  text-decoration:underline;
-}
+.icon-link svg{ width:18px; height:18px; fill:#fff; display:block; }
+.icon-link:hover{ text-decoration:underline; }
 
 /* ===== Responsive tweaks ===== */
 @media (max-width:768px){
-  .site-header .nav{
-    flex-direction:column;
-    gap:.6rem;
-  }
-  .site-header .primary-nav{
-    flex-wrap:wrap;
-    gap:1rem;
-    justify-content:center;
-  }
-  #aerolab > #aerolab-panel{
-    position:static;
-    box-shadow:none;
-    background:#0c1e3e;
-    border-radius:10px;
-  }
-  #aerolab-panel a:hover{
-    background:#122e64;
-  }
-  .site-footer .footer-inner{
-    flex-direction:column;
-    gap:.4rem;
-  }
+  .site-header .nav{ padding:0 .6rem; }
+  .site-header .primary-nav{ gap:1rem; }
+  #aerolab > #aerolab-panel{ position:fixed; top:calc(var(--header-h) + 6px); left:8px; right:auto; }
+  .site-footer .footer-inner{ padding:0 .6rem; }
 }
