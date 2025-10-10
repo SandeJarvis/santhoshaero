@@ -1,73 +1,6 @@
-/* =========================
-  BAR BACKGROUND
-========================= */
-.site-header { background: #0a3369; }
-
-/* =========================
-  LAYOUT: brand left, links right
-========================= */
-.nav {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0.7rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* =========================
-  BRAND (plain text, not a link)
-========================= */
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  color: #fff;              /* white text */
-  font-weight: 700;
-  text-decoration: none;    /* just in case */
-}
-.brand svg { width: 22px; height: 22px; fill: #fff; }
-
-/* =========================
-  HORIZONTAL NAV LINKS
-========================= */
-.primary-nav {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-.primary-nav a,
-.dropbtn {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1rem;
-  line-height: 1;
-}
-
-/* Subtle hover for links */
-.primary-nav a:hover,
-.dropbtn:hover { text-decoration: underline; }
-
-/* =========================
-  DROPDOWN (closed by default)
-========================= */
-.dropdown { position: relative; display: inline-block; }
-
-/* Reset button to look like a link (remove native styles) */
-.dropbtn {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  appearance: none;      /* Firefox/Chrome */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-/* Panel hidden initially */
-.dropdown-content {
-  display: none;
+/* --- FORCE the dropdown to be closed by default --- */
+.site-header .primary-nav .dropdown > .dropdown-content {
+  display: none !important;            /* hide by default */
   position: absolute;
   top: 140%;
   left: 0;
@@ -76,25 +9,45 @@
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,.4);
   padding: 0.5rem 0;
-  z-index: 50;
+  z-index: 9999;                       /* sit on top of theme elements */
 }
 
-/* Items inside the dropdown */
-.dropdown-content a {
-  color: #fff;
-  display: block;
-  padding: 0.55rem 1rem;
-  text-decoration: none;
-  font-weight: 500;
+/* Show only when hovering the dropdown container */
+.site-header .primary-nav .dropdown:hover > .dropdown-content {
+  display: block !important;
+}
+
+/* Make sure dropdown container stays inline (so nav is one line) */
+.site-header .primary-nav .dropdown {
+  position: relative;
+  display: inline-block !important;
+}
+
+/* Button looks like a link; no native button styles */
+.site-header .primary-nav .dropbtn {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Items inside the dropdown panel */
+.site-header .primary-nav .dropdown-content a {
+  display: block !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 0.55rem 1rem !important;
+  font-weight: 500 !important;
   opacity: .95;
 }
-.dropdown-content a:hover { background: #1a1a1a; opacity: 1; }
-
-/* Show only on hover (desktop) */
-.dropdown:hover .dropdown-content { display: block; }
-
-/* Small screens */
-@media (max-width: 640px){
-  .primary-nav { gap: .9rem; }
-  .dropdown-content { min-width: 200px; top: 130%; }
+.site-header .primary-nav .dropdown-content a:hover {
+  background: #1a1a1a !important;
+  opacity: 1;
 }
