@@ -27,15 +27,19 @@ html,body{
 .site-content{
   height:calc(100vh - var(--header-h) - var(--footer-h));
   overflow:auto;
+
+  /* Push content away from fixed bars and add padding so nothing is hidden */
   margin-top:var(--header-h);
   margin-bottom:var(--footer-h);
+  padding-top: 1rem;                  /* <-- prevents the top from being cut */
+  padding-bottom: 1rem;
 }
 
 /* ===== Fixed Header ===== */
 .site-header{
   background:var(--brand);
   box-shadow:0 2px 6px rgba(0,0,0,.18);
-  position:fixed; inset:0 0 auto 0;  /* top:0; left:0; right:0 */
+  position:fixed; inset:0 0 auto 0;
   height:var(--header-h);
   z-index:1000;
 }
@@ -44,14 +48,10 @@ html,body{
   margin:0 auto; padding:0 .8rem;
   display:flex; align-items:center; justify-content:space-between; gap:1rem;
 }
-.site-header .brand{
-  display:flex; align-items:center; gap:.5rem; color:#fff; font-weight:800;
-}
+.site-header .brand{ display:flex; align-items:center; gap:.5rem; color:#fff; font-weight:800; }
 .site-header .brand svg{ width:20px; height:20px; fill:#fff; }
 .site-header .primary-nav{ display:flex; align-items:center; gap:1.5rem; }
-.site-header .primary-nav a{
-  color:#fff; text-decoration:none; font-weight:700; font-size:1rem;
-}
+.site-header .primary-nav a{ color:#fff; text-decoration:none; font-weight:700; font-size:1rem; }
 .site-header .primary-nav a:hover{ text-decoration:underline; }
 
 /* Make Aero Lab button identical to links */
@@ -93,7 +93,7 @@ html,body{
 #aerolab-panel a:hover{ background:#1a1a1a; opacity:1; }
 
 /* ===== Cards / content ===== */
-.container{ max-width:980px; margin:0 auto; padding:1.2rem 1rem 2rem; }
+.container{ max-width:980px; margin:0 auto; padding:0 1rem; }
 .card{
   background:var(--card);
   border-radius:var(--radius);
@@ -113,9 +113,10 @@ ul.compact li{ margin:.2rem 0; }
 /* ===== Fixed Footer ===== */
 .site-footer{
   background:var(--brand); color:#fff;
-  position:fixed; inset:auto 0 0 0;   /* bottom:0; left:0; right:0 */
+  position:fixed; inset:auto 0 0 0;
   height:var(--footer-h);
   z-index:1000;
+  overflow:hidden;
 }
 .site-footer .footer-inner{
   max-width:1100px; height:100%;
@@ -124,12 +125,12 @@ ul.compact li{ margin:.2rem 0; }
 }
 
 /* Footer actions (icons) */
-.footer-actions{ display:flex; align-items:center; gap:.75rem; }
+.footer-actions{ display:flex; align-items:center; gap:.9rem; }
 .icon-link{
-  display:inline-flex; align-items:center; gap:.4rem;
+  display:inline-flex; align-items:center; gap:.45rem;
   color:#fff; text-decoration:none; font-weight:600; background:transparent; border:0; cursor:pointer;
 }
-.icon-link svg{ width:18px; height:18px; fill:#fff; display:block; }
+.icon-link svg{ width:20px !important; height:20px !important; fill:#fff !important; display:block; }
 .icon-link:hover{ text-decoration:underline; }
 
 /* ===== Responsive tweaks ===== */
@@ -139,17 +140,3 @@ ul.compact li{ margin:.2rem 0; }
   #aerolab > #aerolab-panel{ position:fixed; top:calc(var(--header-h) + 6px); left:8px; right:auto; }
   .site-footer .footer-inner{ padding:0 .6rem; }
 }
-/* Footer actions (icons) — enforce small icons */
-.footer-actions{ display:flex; align-items:center; gap:.9rem; }
-.icon-link{
-  display:inline-flex; align-items:center; gap:.45rem;
-  color:#fff; text-decoration:none; font-weight:600;
-}
-.icon-link svg{
-  width:20px !important; height:20px !important; fill:#fff !important; display:block;
-}
-.icon-link:hover{ text-decoration:underline; }
-
-/* Ensure footer doesn’t let oversized content spill */
-.site-footer{ overflow:hidden; }
-
