@@ -1,16 +1,55 @@
-
 <header>
   <div class="nav">
     <div class="brand" title="Aerodynamics with Santhosh">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="white">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="white" aria-hidden="true">
         <path d="M20.6 11.6c.6-.2.6-1 0-1.2l-8-2.7-2.7-6c-.3-.7-1.3-.7-1.6 0L6.9 5.9 2 7.5c-.8.3-.8 1.3 0 1.6l4.9 1.6 1.4 3.1-2.3 1.1c-.3.2-.5.5-.5.9v1l3.6-1.1 1.6 3.4c.3.7 1.3.7 1.6 0l2.7-6 8-2.7z"/>
       </svg>
       <span>Aerodynamics with Santhosh</span>
     </div>
+
     <nav>
       <a href="{{ '/' | relative_url }}">About</a>
       <a href="{{ '/plan-cfd' | relative_url }}">Plan &amp; CFD</a>
-      <a href="{{ '/aerolab' | relative_url }}">Aero Lab</a>
+
+      <!-- Aero Lab dropdown -->
+      <details class="nav-dropdown">
+        <summary>Aero Lab <span aria-hidden="true">▾</span></summary>
+
+        <div class="dropdown-grid">
+          <!-- 1) Aerodynamic Analysis -->
+          <div class="dropdown-col">
+            <h3>Aerodynamic Analysis</h3>
+            <a href="{{ '/tools/aerodynamics/lift' | relative_url }}">Lift</a>
+            <a href="{{ '/tools/aerodynamics/drag' | relative_url }}">Drag</a>
+            <a href="{{ '/tools/aerodynamics/reynolds-external' | relative_url }}">Reynolds (External)</a>
+            <a href="{{ '/tools/aerodynamics/mach-compressibility' | relative_url }}">Mach &amp; Compressibility</a>
+          </div>
+
+          <!-- 2) Fluid Mechanics & Flow -->
+          <div class="dropdown-col">
+            <h3>Fluid Mechanics &amp; Flow</h3>
+            <a href="{{ '/tools/fluids/reynolds-internal' | relative_url }}">Reynolds (Internal)</a>
+            <a href="{{ '/tools/fluids/flow-rate' | relative_url }}">Flow Rates (Q, ṁ)</a>
+            <a href="{{ '/tools/fluids/pipe-losses' | relative_url }}">Pipe Losses (f, Δp)</a>
+          </div>
+
+          <!-- 3) Design Your Own Plane (renamed) -->
+          <div class="dropdown-col">
+            <h3>Design Your Own Plane</h3>
+            <a href="{{ '/tools/sizing-performance/tw-ws' | relative_url }}">T/W vs W/S</a>
+            <a href="{{ '/tools/propulsion/prop-thrust-power' | relative_url }}">Prop Thrust ↔ Power</a>
+          </div>
+
+          <!-- 4) Engineering Essentials -->
+          <div class="dropdown-col">
+            <h3>Engineering Essentials</h3>
+            <a href="{{ '/tools/atmosphere/isa' | relative_url }}">Standard Atmosphere</a>
+            <a href="{{ '/tools/geometry/sections' | relative_url }}">Cross-Sections &amp; Dₕ</a>
+            <a href="{{ '/tools/geometry/units' | relative_url }}">Unit Conversions</a>
+          </div>
+        </div>
+      </details>
+
       <a href="{{ '/contact' | relative_url }}">Contact</a>
     </nav>
   </div>
