@@ -1,5 +1,45 @@
+# Site settings
 title: Aerodynamics with Santhosh
-description: A digital engineering diary focused on aerodynamics, CFD, and conceptual design of aircraft and UAVs.
-theme: null
-markdown: kramdown
+description: >-
+  A digital engineering diary focused on aerodynamics, CFD, and conceptual design
+  of aircraft and UAVs.
 
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# URL settings (important for GitHub Pages project sites)
+url: "https://sandejarvis.github.io"   # Your main GitHub Pages domain
+baseurl: "/santhoshaero"               # Your repository name (with leading slash)
+
+# Navigation links (used by includes/header.html if needed)
+nav_links:
+  - name: "About"
+    url: "/"
+  - name: "Plan & CFD"
+    url: "/plan-cfd"
+  - name: "Aero Lab"
+    url: "/aerolab"
+  - name: "Contact"
+    url: "/contact"
+
+# Author info
+author:
+  name: "Santhosh"
+  email: "your_email@example.com"
+
+# Markdown options
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude these from the build
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .github
