@@ -4,34 +4,15 @@
   <meta charset="utf-8">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Our site CSS (load LAST so it wins over theme defaults) -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
-<body>
+<body class="site">
   {% include header.html %}
 
-  <!-- Centered content area -->
-  <main class="container">
+  <main class="container site-content">
     {{ content }}
   </main>
 
   {% include footer.html %}
-
-  <!-- Tiny JS to allow click-to-toggle on mobile for Aero Lab -->
-  <script>
-    (function () {
-      var dd = document.getElementById('aerolab');
-      if (!dd) return;
-      var btn = dd.querySelector('.aerolab-btn');
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        dd.classList.toggle('open');
-      });
-      document.addEventListener('click', function (e) {
-        if (!dd.contains(e.target)) dd.classList.remove('open');
-      });
-    })();
-  </script>
 </body>
 </html>
