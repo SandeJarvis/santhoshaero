@@ -1,28 +1,42 @@
-<header>
+<!-- =========================
+  HEADER / TOP NAVIGATION
+  File: _includes/header.html
+  Purpose: Brand + Horizontal Nav + "Aero Lab" dropdown
+  Dependencies: assets/style.css (see styles below)
+========================= -->
+<header class="site-header">
   <div class="nav">
-    <div class="brand" title="Aerodynamics with Santhosh">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="white" aria-hidden="true">
+    <!-- ========== BRAND / LOGO ========== -->
+    <a class="brand" href="{{ '/' | relative_url }}" title="Aerodynamics with Santhosh">
+      <!-- Simple plane icon (SVG) -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" aria-hidden="true">
         <path d="M20.6 11.6c.6-.2.6-1 0-1.2l-8-2.7-2.7-6c-.3-.7-1.3-.7-1.6 0L6.9 5.9 2 7.5c-.8.3-.8 1.3 0 1.6l4.9 1.6 1.4 3.1-2.3 1.1c-.3.2-.5.5-.5.9v1l3.6-1.1 1.6 3.4c.3.7 1.3.7 1.6 0l2.7-6 8-2.7z"/>
       </svg>
       <span>Aerodynamics with Santhosh</span>
-    </div>
+    </a>
 
-    <nav>
+    <!-- ========== PRIMARY NAV LINKS ========== -->
+    <nav class="primary-nav" aria-label="Main">
+      <!-- 1) About -->
       <a href="{{ '/' | relative_url }}">About</a>
-      <a href="{{ '/plan-cfd' | relative_url }}">Plan &amp; CFD</a>
 
-      <!-- Aero Lab dropdown: ONLY 5 categories -->
-      <details class="nav-dropdown">
-        <summary>Aero Lab <span aria-hidden="true">▾</span></summary>
-        <div class="dropdown-list">
-          <a class="dropdown-item" href="{{ '/aerodynamic-analysis'   | relative_url }}">Aerodynamic Analysis</a>
-          <a class="dropdown-item" href="{{ '/fluid-mechanics-flow'   | relative_url }}">Fluid Mechanics &amp; Flow</a>
-          <a class="dropdown-item" href="{{ '/design-your-own-plane'  | relative_url }}">Design Your Own Plane</a>
-          <a class="dropdown-item" href="{{ '/engineering-essentials' | relative_url }}">Engineering Essentials</a>
-          <a class="dropdown-item" href="{{ '/cfd'                    | relative_url }}">CFD</a>
+      <!-- 2) Aero Lab (Dropdown trigger) -->
+      <div class="dropdown" role="group" aria-label="Aero Lab menu">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+          Aero Lab ▾
+        </button>
+        <!-- Dropdown panel: ONLY 5 MAJOR CATEGORIES -->
+        <div class="dropdown-content" role="menu">
+          <!-- Create these 5 .md files later at repo root -->
+          <a role="menuitem" href="{{ '/aerodynamic-analysis'   | relative_url }}">Aerodynamic Analysis</a>
+          <a role="menuitem" href="{{ '/fluid-mechanics-flow'   | relative_url }}">Fluid Mechanics &amp; Flow</a>
+          <a role="menuitem" href="{{ '/design-your-own-plane'  | relative_url }}">Design Your Own Plane</a>
+          <a role="menuitem" href="{{ '/engineering-essentials' | relative_url }}">Engineering Essentials</a>
+          <a role="menuitem" href="{{ '/cfd'                    | relative_url }}">CFD</a>
         </div>
-      </details>
+      </div>
 
+      <!-- 3) Contact -->
       <a href="{{ '/contact' | relative_url }}">Contact</a>
     </nav>
   </div>
