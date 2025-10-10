@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Load our CSS LAST -->
+
+  <!-- Our site CSS (load LAST so it wins over theme defaults) -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
   {% include header.html %}
 
+  <!-- Centered content area -->
   <main class="container">
     {{ content }}
   </main>
 
   {% include footer.html %}
 
-  <!-- Small JS: toggle dropdown on click (also closes on outside click) -->
+  <!-- Tiny JS to allow click-to-toggle on mobile for Aero Lab -->
   <script>
     (function () {
       var dd = document.getElementById('aerolab');
