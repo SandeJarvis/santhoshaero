@@ -1,27 +1,34 @@
-<!-- =========================
-  HEADER / TOP NAVIGATION
-========================= -->
+<!-- ============================================
+  HEADER / TOP NAVIGATION BAR
+  Author: Santhosh
+  Purpose: Displays brand name + main navigation + dropdown for Aero Lab
+============================================ -->
 <header class="site-header">
   <div class="nav">
-    <!-- BRAND — plain text, NOT clickable -->
+
+    <!-- 🟦 BRAND SECTION (Plain text, not clickable) -->
     <div class="brand" title="Aerodynamics with Santhosh">
+      <!-- Airplane icon -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" aria-hidden="true">
         <path d="M20.6 11.6c.6-.2.6-1 0-1.2l-8-2.7-2.7-6c-.3-.7-1.3-.7-1.6 0L6.9 5.9 2 7.5c-.8.3-.8 1.3 0 1.6l4.9 1.6 1.4 3.1-2.3 1.1c-.3.2-.5.5-.5.9v1l3.6-1.1 1.6 3.4c.3.7 1.3.7 1.6 0l2.7-6 8-2.7z"/>
       </svg>
       <span>Aerodynamics with Santhosh</span>
     </div>
 
-    <!-- HORIZONTAL NAV -->
-    <nav class="primary-nav" aria-label="Main">
+    <!-- 🟦 MAIN NAVIGATION -->
+    <nav class="primary-nav" aria-label="Main Navigation">
+      <!-- About link -->
       <a href="{{ '/' | relative_url }}">About</a>
 
-      <!-- DROPDOWN: closed by default, opens on hover -->
-      <div class="dropdown" role="group" aria-label="Aero Lab menu">
+      <!-- Aero Lab dropdown -->
+      <div class="dropdown" role="group" aria-label="Aero Lab">
         <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
           Aero Lab ▾
         </button>
+
+        <!-- Dropdown content (hidden by default) -->
         <div class="dropdown-content" role="menu">
-          <!-- Only 5 categories; create matching .md files later -->
+          <!-- You’ll create these .md pages later -->
           <a role="menuitem" href="{{ '/aerodynamic-analysis'   | relative_url }}">Aerodynamic Analysis</a>
           <a role="menuitem" href="{{ '/fluid-mechanics-flow'   | relative_url }}">Fluid Mechanics &amp; Flow</a>
           <a role="menuitem" href="{{ '/design-your-own-plane'  | relative_url }}">Design Your Own Plane</a>
@@ -30,6 +37,7 @@
         </div>
       </div>
 
+      <!-- Contact link -->
       <a href="{{ '/contact' | relative_url }}">Contact</a>
     </nav>
   </div>
