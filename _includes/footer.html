@@ -3,7 +3,7 @@
     <span>© {{ "now" | date: "%Y" }} Santhosh · Aerodynamics with Santhosh</span>
 
     <nav class="footer-actions" aria-label="Footer Links">
-      <!-- LinkedIn (small icon + label) -->
+      <!-- LinkedIn -->
       <a class="icon-link" href="https://www.linkedin.com/in/santhosh-kumar-2369989a/"
          target="_blank" rel="noopener" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -12,8 +12,11 @@
         <span>LinkedIn</span>
       </a>
 
-      <!-- Email (address not printed; assembled on click) -->
-      <a id="email-link" class="icon-link" href="#" aria-label="Email Santhosh"
+      <!-- Email: fallback mailto + hidden parts for JS (address not displayed) -->
+      <a id="email-link"
+         class="icon-link"
+         href="mailto:santhoshaero008%40gmail.com?subject=Hello%20from%20the%20website"
+         aria-label="Email Santhosh"
          data-u="santhoshaero008" data-d="gmail" data-t="com">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/>
