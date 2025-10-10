@@ -15,6 +15,18 @@
   </main>
 
   {% include footer.html %}
+<script>
+  (function(){
+    var el = document.getElementById('email-link');
+    if(!el) return;
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      var addr = el.dataset.u + '@' + el.dataset.d + '.' + el.dataset.t; // santhoshaero008@gmail.com
+      var sub  = encodeURIComponent('Hello from the website');
+      window.location.href = 'mailto:' + addr + '?subject=' + sub;
+    });
+  })();
+</script>
 
   <!-- Dropdown click support + email assembler -->
   <script>
