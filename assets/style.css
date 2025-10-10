@@ -1,91 +1,100 @@
 /* =========================
-  NAV BAR: LAYOUT & LOOK
-  Affects: .site-header, .nav, .brand, .primary-nav
+  BAR BACKGROUND
 ========================= */
 .site-header { background: #0a3369; }
+
+/* =========================
+  LAYOUT: brand left, links right
+========================= */
 .nav {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0.7rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* brand left, links right */
-  gap: 1rem;
+  justify-content: space-between;
 }
 
-/* ---------- Brand (logo + text) ---------- */
+/* =========================
+  BRAND (plain text, not a link)
+========================= */
 .brand {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
-  color: #fff;
-  text-decoration: none;
+  color: #fff;              /* white text */
   font-weight: 700;
+  text-decoration: none;    /* just in case */
 }
 .brand svg { width: 22px; height: 22px; fill: #fff; }
 
-/* ---------- Primary links (horizontal) ---------- */
+/* =========================
+  HORIZONTAL NAV LINKS
+========================= */
 .primary-nav {
   display: inline-flex;
   align-items: center;
-  gap: 1.25rem; /* space between About | Aero Lab | Contact */
+  gap: 1.25rem;
 }
 .primary-nav a,
 .dropbtn {
   color: #fff;
-  text-decoration: none;
   font-weight: 600;
-  background: none;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
   font-size: 1rem;
   line-height: 1;
 }
+
+/* Subtle hover for links */
 .primary-nav a:hover,
 .dropbtn:hover { text-decoration: underline; }
 
 /* =========================
-  DROPDOWN (Aero Lab)
+  DROPDOWN (closed by default)
 ========================= */
-.dropdown {
-  position: relative;       /* anchor for the absolute panel */
-  display: inline-block;    /* keep it in the same line as other links */
-}
-.dropbtn { padding: 0; }    /* looks like a link */
+.dropdown { position: relative; display: inline-block; }
 
-/* Panel */
+/* Reset button to look like a link (remove native styles) */
+.dropbtn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;      /* Firefox/Chrome */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Panel hidden initially */
 .dropdown-content {
-  display: none;            /* hidden by default */
+  display: none;
   position: absolute;
-  top: 140%;                /* below the button */
+  top: 140%;
   left: 0;
   background: #111;
   min-width: 240px;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,.4);
   padding: 0.5rem 0;
-  z-index: 20;
+  z-index: 50;
 }
 
-/* Items in panel */
+/* Items inside the dropdown */
 .dropdown-content a {
   color: #fff;
-  padding: 0.55rem 1rem;
   display: block;
+  padding: 0.55rem 1rem;
   text-decoration: none;
   font-weight: 500;
   opacity: .95;
 }
-.dropdown-content a:hover {
-  background: #1a1a1a;
-  opacity: 1;
-}
+.dropdown-content a:hover { background: #1a1a1a; opacity: 1; }
 
-/* Show panel on hover (desktop) */
+/* Show only on hover (desktop) */
 .dropdown:hover .dropdown-content { display: block; }
 
-/* Optional: compact on small screens */
+/* Small screens */
 @media (max-width: 640px){
-  .primary-nav { gap: 0.9rem; }
+  .primary-nav { gap: .9rem; }
   .dropdown-content { min-width: 200px; top: 130%; }
 }
