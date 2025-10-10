@@ -11,42 +11,15 @@
       <a href="{{ '/' | relative_url }}">About</a>
       <a href="{{ '/plan-cfd' | relative_url }}">Plan &amp; CFD</a>
 
-      <!-- Aero Lab dropdown -->
+      <!-- Aero Lab dropdown: ONLY 5 categories -->
       <details class="nav-dropdown">
         <summary>Aero Lab <span aria-hidden="true">▾</span></summary>
-
-        <div class="dropdown-grid">
-          <!-- 1) Aerodynamic Analysis -->
-          <div class="dropdown-col">
-            <h3>Aerodynamic Analysis</h3>
-            <a href="{{ '/tools/aerodynamics/lift' | relative_url }}">Lift</a>
-            <a href="{{ '/tools/aerodynamics/drag' | relative_url }}">Drag</a>
-            <a href="{{ '/tools/aerodynamics/reynolds-external' | relative_url }}">Reynolds (External)</a>
-            <a href="{{ '/tools/aerodynamics/mach-compressibility' | relative_url }}">Mach &amp; Compressibility</a>
-          </div>
-
-          <!-- 2) Fluid Mechanics & Flow -->
-          <div class="dropdown-col">
-            <h3>Fluid Mechanics &amp; Flow</h3>
-            <a href="{{ '/tools/fluids/reynolds-internal' | relative_url }}">Reynolds (Internal)</a>
-            <a href="{{ '/tools/fluids/flow-rate' | relative_url }}">Flow Rates (Q, ṁ)</a>
-            <a href="{{ '/tools/fluids/pipe-losses' | relative_url }}">Pipe Losses (f, Δp)</a>
-          </div>
-
-          <!-- 3) Design Your Own Plane (renamed) -->
-          <div class="dropdown-col">
-            <h3>Design Your Own Plane</h3>
-            <a href="{{ '/tools/sizing-performance/tw-ws' | relative_url }}">T/W vs W/S</a>
-            <a href="{{ '/tools/propulsion/prop-thrust-power' | relative_url }}">Prop Thrust ↔ Power</a>
-          </div>
-
-          <!-- 4) Engineering Essentials -->
-          <div class="dropdown-col">
-            <h3>Engineering Essentials</h3>
-            <a href="{{ '/tools/atmosphere/isa' | relative_url }}">Standard Atmosphere</a>
-            <a href="{{ '/tools/geometry/sections' | relative_url }}">Cross-Sections &amp; Dₕ</a>
-            <a href="{{ '/tools/geometry/units' | relative_url }}">Unit Conversions</a>
-          </div>
+        <div class="dropdown-list">
+          <a class="dropdown-item" href="{{ '/aerodynamic-analysis'   | relative_url }}">Aerodynamic Analysis</a>
+          <a class="dropdown-item" href="{{ '/fluid-mechanics-flow'   | relative_url }}">Fluid Mechanics &amp; Flow</a>
+          <a class="dropdown-item" href="{{ '/design-your-own-plane'  | relative_url }}">Design Your Own Plane</a>
+          <a class="dropdown-item" href="{{ '/engineering-essentials' | relative_url }}">Engineering Essentials</a>
+          <a class="dropdown-item" href="{{ '/cfd'                    | relative_url }}">CFD</a>
         </div>
       </details>
 
