@@ -139,3 +139,17 @@ ul.compact li{ margin:.2rem 0; }
   #aerolab > #aerolab-panel{ position:fixed; top:calc(var(--header-h) + 6px); left:8px; right:auto; }
   .site-footer .footer-inner{ padding:0 .6rem; }
 }
+/* Footer actions (icons) — enforce small icons */
+.footer-actions{ display:flex; align-items:center; gap:.9rem; }
+.icon-link{
+  display:inline-flex; align-items:center; gap:.45rem;
+  color:#fff; text-decoration:none; font-weight:600;
+}
+.icon-link svg{
+  width:20px !important; height:20px !important; fill:#fff !important; display:block;
+}
+.icon-link:hover{ text-decoration:underline; }
+
+/* Ensure footer doesn’t let oversized content spill */
+.site-footer{ overflow:hidden; }
+
