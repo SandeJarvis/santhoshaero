@@ -3,15 +3,15 @@
   --bg:#f3f6fb;
   --text:#0b1220;
   --muted:#5b6b86;
-  --brand:#0a3369;        /* header + footer color */
+  --brand:#0a3369;          /* header + footer color */
   --card:#fff;
   --ring:rgba(10,51,105,.12);
   --shadow:0 6px 24px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
   --radius:14px;
 
   /* fixed bars */
-  --header-h: 64px;
-  --footer-h: 56px;
+  --header-h:64px;
+  --footer-h:56px;
 }
 
 html,body{
@@ -22,25 +22,25 @@ html,body{
   font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;
 }
 
-/* Only middle scrolls */
-.site{height:100vh; overflow:hidden; display:block;}
-.site-content{
-  height:calc(100vh - var(--header-h) - var(--footer-h));
-  overflow:auto;
+/* Let the BODY scroll; reserve space for fixed header/footer */
+body.site{
+  padding-top:var(--header-h);
+  padding-bottom:var(--footer-h);
+}
 
-  /* Push content away from fixed bars and add padding so nothing is hidden */
-  margin-top:var(--header-h);
-  margin-bottom:var(--footer-h);
-  padding-top: 1rem;                  /* <-- prevents the top from being cut */
-  padding-bottom: 1rem;
+/* Content container */
+.container{
+  max-width:980px;
+  margin:0 auto;
+  padding:1.2rem 1rem 2rem;
 }
 
 /* ===== Fixed Header ===== */
 .site-header{
+  position:fixed; inset:0 0 auto 0;   /* top:0; left:0; right:0 */
+  height:var(--header-h);
   background:var(--brand);
   box-shadow:0 2px 6px rgba(0,0,0,.18);
-  position:fixed; inset:0 0 auto 0;
-  height:var(--header-h);
   z-index:1000;
 }
 .site-header .nav{
@@ -48,27 +48,26 @@ html,body{
   margin:0 auto; padding:0 .8rem;
   display:flex; align-items:center; justify-content:space-between; gap:1rem;
 }
-.site-header .brand{ display:flex; align-items:center; gap:.5rem; color:#fff; font-weight:800; }
+.site-header .brand{
+  display:flex; align-items:center; gap:.5rem; color:#fff; font-weight:800;
+}
 .site-header .brand svg{ width:20px; height:20px; fill:#fff; }
 .site-header .primary-nav{ display:flex; align-items:center; gap:1.5rem; }
-.site-header .primary-nav a{ color:#fff; text-decoration:none; font-weight:700; font-size:1rem; }
+.site-header .primary-nav a{
+  color:#fff; text-decoration:none; font-weight:700; font-size:1rem;
+}
 .site-header .primary-nav a:hover{ text-decoration:underline; }
 
 /* Make Aero Lab button identical to links */
 .aerolab-btn{
-  all: unset;
-  color:#fff;
-  cursor:pointer;
-  font-weight:700;
-  font-size:1rem;
-  line-height:1;
+  all:unset; color:#fff; cursor:pointer; font-weight:700; font-size:1rem; line-height:1;
 }
 .aerolab-btn:hover{ text-decoration:underline; }
 
-/* Dropdown (hover + click via .open) */
+/* ===== Dropdown (hover + click via .open) ===== */
 #aerolab{ position:relative; display:inline-block; }
 
-/* Hover bridge to prevent closing when moving mouse down */
+/* Hover bridge to prevent closing on pointer travel */
 #aerolab::after{
   content:""; position:absolute; left:0; top:100%;
   width:100%; height:10px; pointer-events:none;
@@ -85,15 +84,13 @@ html,body{
 #aerolab:hover > #aerolab-panel,
 #aerolab:focus-within > #aerolab-panel,
 #aerolab.open > #aerolab-panel{ display:block !important; }
-
 #aerolab-panel a{
   display:block !important; color:#fff !important; text-decoration:none !important;
   padding:.55rem 1rem; font-weight:600; opacity:.95;
 }
 #aerolab-panel a:hover{ background:#1a1a1a; opacity:1; }
 
-/* ===== Cards / content ===== */
-.container{ max-width:980px; margin:0 auto; padding:0 1rem; }
+/* ===== Cards / text blocks ===== */
 .card{
   background:var(--card);
   border-radius:var(--radius);
@@ -112,9 +109,10 @@ ul.compact li{ margin:.2rem 0; }
 
 /* ===== Fixed Footer ===== */
 .site-footer{
-  background:var(--brand); color:#fff;
-  position:fixed; inset:auto 0 0 0;
+  position:fixed; inset:auto 0 0 0;   /* bottom:0; left:0; right:0 */
   height:var(--footer-h);
+  background:var(--brand);
+  color:#fff;
   z-index:1000;
   overflow:hidden;
 }
@@ -137,6 +135,7 @@ ul.compact li{ margin:.2rem 0; }
 @media (max-width:768px){
   .site-header .nav{ padding:0 .6rem; }
   .site-header .primary-nav{ gap:1rem; }
+  /* dropdown panel behaves well on small screens */
   #aerolab > #aerolab-panel{ position:fixed; top:calc(var(--header-h) + 6px); left:8px; right:auto; }
   .site-footer .footer-inner{ padding:0 .6rem; }
 }
