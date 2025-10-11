@@ -140,7 +140,7 @@ window.MathJax = {
 <div class="card" style="margin-top:1rem;">
   <div class="pill">Geometric Utilities</div>
   <h2>Shapes & Hydraulic Diameter</h2>
-  <p>Compute area, perimeter and hydraulic diameter $D_h = \\dfrac{4A}{P}$. Choose shape and provide dimensions.</p>
+  <p>Compute area, perimeter and hydraulic diameter $D_h = \dfrac{4A}{P}$. Choose shape and provide dimensions.</p>
 
   <div class="input-group">
     <div>
