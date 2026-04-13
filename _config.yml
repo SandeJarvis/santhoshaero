@@ -1,5 +1,5 @@
-title: Santhosh | Aerospace Engineer
-description: Aerodynamics • CFD • Aircraft Design | Passionate aerospace engineer with expertise in UAVs, eVTOL & experimental fluid mechanics.
+title: Santhosh Kumar Sankar | Aerospace Engineer
+description: 7+ years R&D in Aerodynamics • CFD • eVTOL | Full work rights in Australia
 
 markdown: kramdown
 theme: minima
@@ -10,6 +10,9 @@ plugins:
 url: "https://sandejarvis.github.io"
 baseurl: "/santhoshaero"
 
-author:
-  name: Santhosh
-  linkedin: "https://linkedin.com/in/yourprofile"   # ← change this
+# Sci-fi navigation
+header_pages:
+  - index.md
+  - aerodynamic-analysis.md
+  - cfd.md
+  - tools.md
