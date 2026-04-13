@@ -25,7 +25,7 @@ title: Santhosh Kumar Sankar | Aerospace Engineer
         <a href="/aerodynamic-analysis" class="hover:text-[#00f5ff] transition">AERODYNAMICS</a>
         <a href="/tools" class="hover:text-[#00f5ff] transition">ENGINEERING TOOLS</a>
       </div>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank"
+      <a href="https://www.linkedin.com/in/santhosh-kumar-s-2369989a/" target="_blank"
          class="bg-[#00f5ff] hover:bg-white text-black px-7 py-3 rounded-3xl font-bold flex items-center gap-2 transition">
         <i class="fab fa-linkedin"></i> CONNECT
       </a>
