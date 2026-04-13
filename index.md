@@ -37,10 +37,3 @@ Now seeking **Aerospace, Mechanical Design & R&D roles in Sydney**.
 **Next (after you commit both):**  
 Reply **“Done”**  
 
-I will immediately give you:  
-- New **Tools page** (PDF merge, compress, edit — all inside your website)  
-- How to add more projects/blogs easily  
-- Any other tweaks you want (dark mode, better colors, contact form, etc.)
-
-Just commit the two files above and say **“Done”**.  
-Your site will now look professional and ready for job applications! 🚀
