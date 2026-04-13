@@ -1,5 +1,5 @@
 title: Santhosh Kumar Sankar | Aerospace Engineer
-description: 7+ years R&D in Aerodynamics • CFD • eVTOL | Full work rights in Australia
+description: Futuristic Aerodynamics • CFD • eVTOL R&D | 7+ years international experience | Full work rights Australia
 
 markdown: kramdown
 theme: minima
@@ -9,10 +9,3 @@ plugins:
 
 url: "https://sandejarvis.github.io"
 baseurl: "/santhoshaero"
-
-# Sci-fi navigation
-header_pages:
-  - index.md
-  - aerodynamic-analysis.md
-  - cfd.md
-  - tools.md
