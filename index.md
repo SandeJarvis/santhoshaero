@@ -3,50 +3,86 @@ layout: default
 title: Santhosh Kumar Sankar | Aerospace Engineer
 ---
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 <script>
   document.documentElement.classList.add('dark')
-  tailwind.config = { content: [], theme: { extend: { colors: { neon: '#00f5ff', deep: '#0a1428' } } } }
+  tailwind.config = {
+    content: [],
+    theme: { extend: { colors: { neon: '#00f5ff' } } }
+  }
 </script>
 
-<div class="min-h-screen bg-gradient-to-br from-[#0a1428] via-[#001122] to-black text-white font-sans">
+<div class="min-h-screen bg-[#05080f] text-white">
 
-  <!-- Navbar -->
-  <nav class="border-b border-white/10 backdrop-blur-lg bg-black/80 fixed w-full z-50">
-    <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-      <a href="/" class="text-3xl font-bold tracking-tighter flex items-center gap-2"><span class="text-[#00f5ff]">SANTHOSH</span><span>AERO</span></a>
-      <div class="flex items-center gap-10 text-sm uppercase tracking-widest">
-        <a href="/" class="hover:text-[#00f5ff]">ABOUT</a>
-        <a href="/aerodynamic-analysis" class="hover:text-[#00f5ff]">AERODYNAMICS</a>
-        <a href="/tools" class="hover:text-[#00f5ff]">ENGINEERING TOOLS</a>
-        <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="bg-[#00f5ff] hover:bg-white text-black px-8 py-3 rounded-3xl font-bold">CONNECT ON LINKEDIN</a>
+  <!-- Ultra-clean navbar -->
+  <nav class="fixed top-0 w-full bg-[#05080f]/90 backdrop-blur-xl border-b border-white/10 z-50">
+    <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">⚡</span>
+        <span class="text-2xl font-bold tracking-[-2px] title-font">SANTHOSH AERO</span>
       </div>
+      <div class="flex gap-10 text-sm uppercase tracking-widest font-medium">
+        <a href="/" class="hover:text-[#00f5ff] transition">ABOUT</a>
+        <a href="/aerodynamic-analysis" class="hover:text-[#00f5ff] transition">AERODYNAMICS</a>
+        <a href="/tools" class="hover:text-[#00f5ff] transition">ENGINEERING TOOLS</a>
+      </div>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank"
+         class="bg-[#00f5ff] hover:bg-white text-black px-7 py-3 rounded-3xl font-bold flex items-center gap-2 transition">
+        <i class="fab fa-linkedin"></i> CONNECT
+      </a>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <div class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h1 class="text-7xl font-bold leading-none tracking-tighter">SANTHOSH KUMAR SANKAR</h1>
-        <p class="text-3xl text-[#00f5ff] mt-4">Aerospace Engineer • CFD & Aerodynamics Specialist</p>
-        <p class="mt-8 text-xl max-w-lg opacity-90">7+ years bridging high-fidelity CFD with real-world automated experimental systems. Reduced R&D setup time by 60%. Seeking Aerospace & R&amp;D roles in Sydney.</p>
-        <div class="mt-12 flex gap-6">
-          <a href="/Santhosh_CV.pdf" class="px-10 py-5 bg-[#00f5ff] text-black font-bold rounded-3xl flex items-center gap-3 hover:scale-105 transition"><i class="fas fa-download"></i> DOWNLOAD CV</a>
-          <a href="/aerodynamic-analysis" class="px-10 py-5 border border-white/30 rounded-3xl hover:border-[#00f5ff] hover:text-[#00f5ff] transition">EXPLORE MY WORK</a>
+  <!-- Hero - Robotics + Aero style -->
+  <div class="pt-28 pb-24 px-8 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-7">
+        <div class="inline-flex items-center gap-2 bg-white/10 text-[#00f5ff] text-sm px-5 py-2 rounded-3xl mb-6">
+          <div class="w-2 h-2 bg-[#00f5ff] rounded-full animate-pulse"></div>
+          NOW SEEKING ROLES IN SYDNEY
+        </div>
+        <h1 class="text-7xl md:text-8xl font-bold leading-none tracking-[-3px] title-font neon-text">
+          SANTHOSH<br>KUMAR SANKAR
+        </h1>
+        <p class="text-4xl text-[#00f5ff] mt-4">Aerospace Engineer • CFD &amp; Robotics Systems</p>
+        
+        <p class="mt-8 text-xl max-w-lg opacity-90">
+          7+ years bridging high-fidelity CFD with automated robotic experimental systems.<br>
+          Reduced R&amp;D setup time by <span class="text-[#00f5ff] font-bold">60%</span>.
+        </p>
+
+        <div class="mt-12 flex gap-5">
+          <a href="/Santhosh_CV.pdf" 
+             class="px-10 py-5 bg-[#00f5ff] text-black font-bold rounded-3xl flex items-center gap-3 hover:scale-105 transition text-lg">
+            <i class="fas fa-download"></i> DOWNLOAD CV
+          </a>
+          <a href="/aerodynamic-analysis" 
+             class="px-10 py-5 border border-white/30 rounded-3xl hover:border-[#00f5ff] hover:text-[#00f5ff] text-lg transition">
+            EXPLORE AERODYNAMICS LAB →
+          </a>
         </div>
       </div>
-      <div class="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-3xl p-10">
-        <p class="uppercase text-[#00f5ff] text-sm tracking-widest">Currently available for</p>
-        <p class="text-4xl font-light mt-3">Aerospace • Mechanical Design • R&amp;D roles in Sydney</p>
-        <div class="mt-10 text-sm grid grid-cols-2 gap-y-4">
-          <div>✅ Full Unrestricted Work Rights</div>
-          <div>✅ NSW Driver License</div>
+
+      <!-- Right side - Glass card with robotics/aero vibe -->
+      <div class="md:col-span-5">
+        <div class="glass rounded-3xl p-8 shadow-2xl border border-[#00f5ff]/20">
+          <p class="uppercase text-[#00f5ff] text-sm tracking-[2px]">CURRENTLY AVAILABLE FOR</p>
+          <ul class="mt-6 space-y-4 text-xl">
+            <li class="flex items-center gap-3"><span class="text-[#00f5ff]">◉</span> Aerospace Design</li>
+            <li class="flex items-center gap-3"><span class="text-[#00f5ff]">◉</span> Mechanical R&amp;D</li>
+            <li class="flex items-center gap-3"><span class="text-[#00f5ff]">◉</span> Robotics + Automation Systems</li>
+            <li class="flex items-center gap-3"><span class="text-[#00f5ff]">◉</span> Sydney-based roles</li>
+          </ul>
+          <div class="mt-10 flex gap-8 text-sm">
+            <div>✅ Full Work Rights</div>
+            <div>✅ NSW Driver License</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Subtle footer bar -->
+  <div class="fixed bottom-0 w-full bg-[#05080f]/80 backdrop-blur text-center text-xs py-4 border-t border-white/10">
+    © 2026 Santhosh Kumar Sankar • Aerodynamics &amp; Robotics Systems
+  </div>
 </div>
