@@ -1,52 +1,46 @@
 ---
 layout: default
-title: Santhosh | Aerospace Engineer
+title: Santhosh Kumar Sankar | Aerospace Engineer
 ---
 
-<div style="text-align:center; padding: 60px 20px; background: linear-gradient(135deg, #0f172a, #1e2937); color: white; border-radius: 12px; margin-bottom: 40px;">
-  <h1 style="font-size: 3rem; margin:0;">Hello, I’m Santhosh</h1>
-  <p style="font-size: 1.5rem; margin:10px 0 0;">Aerospace Engineer • Aerodynamics & CFD Specialist</p>
-  <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; opacity: 0.9;">
-    Passionate about UAVs, eVTOL, experimental fluid mechanics & aircraft design. 
-    Currently building high-performance aerodynamic solutions.
+<div style="text-align:center; padding: 60px 20px; background: linear-gradient(135deg, #0f172a, #1e2937); color: white; border-radius: 16px; margin-bottom: 40px;">
+  <h1 style="font-size: 3.2rem; margin:0;">Santhosh Kumar Sankar</h1>
+  <p style="font-size: 1.6rem; margin:8px 0 0;">Aerospace Engineer • Aerodynamics & CFD Specialist</p>
+  <p style="font-size: 1.1rem; max-width: 720px; margin: 20px auto; opacity: 0.95;">
+    Hebersham, NSW • +61 424 491 480 • Full Unrestricted Work Rights (No Sponsorship Needed)
   </p>
-  <a href="https://linkedin.com/in/yourprofile" class="btn" style="background:#0ea5e9; color:white; padding:12px 30px; border-radius:50px; text-decoration:none; font-weight:bold;">Download CV (PDF)</a>
+  <a href="https://sandejarvis.github.io/santhoshaero/Santhosh_CV.pdf" style="background:#0ea5e9; color:white; padding:14px 32px; border-radius:50px; text-decoration:none; font-weight:600; display:inline-block; margin-top:10px;">📄 Download CV</a>
 </div>
 
+### Professional Summary
+Highly analytical Aerospace Engineer with **7+ years international R&D experience** across Germany, France and India.  
+I bridge high-fidelity CFD simulations with hands-on prototyping and automated experimental systems.  
+Reduced R&D setup timelines by **60%** using Python-driven automation, precision motion control and mechatronics integration.  
+Now seeking **Aerospace, Mechanical Design & R&D roles in Sydney**.
+
 ### Expertise
-- **External Aerodynamics** – UAV / eVTOL / ducted fans / unsteady flows  
-- **Internal & Microchannel Flows** – Plasma-air interaction, free-jet studies  
-- **Experimental Fluid Mechanics** – High-speed imaging, optical diagnostics  
-- **Computational Fluid Dynamics** – RANS, multi-species, automation scripts  
-- **Aircraft & UAV Design** – Conceptual design, performance analysis, EDF configs  
+- **Aerodynamics & CFD** — External/Internal flows, eVTOL ducts, UAVs, unsteady flows, microchannel gas flows  
+- **Design & Prototyping** — CATIA V5, SolidWorks, rapid prototyping, heavy-duty test rigs  
+- **Automation & Digital Engineering** — Python & MATLAB automation, ROS, Klipper, Knowledge Graphs (Neo4j)  
+- **Lab & Project Leadership** — Infrastructure setup, technical procurement, multidisciplinary team lead  
 
-### Key Projects & Research
-- Hybrid UAV Aerodynamics  
-- Microchannel Plasma Flow Investigation  
-- Flexible-Flap Foil Propulsion  
-- Superhydrophobic Fractal Spheres (drag & biofouling reduction)  
+### Key Highlights
+- Engineered fully automated experimental chamber for plasma jet research (Leibniz Institute, Germany)  
+- Led aerodynamic design of eVTOL ducts & blades — achieved **25% efficiency improvement** (ePlane Company)  
+- Developed high-fidelity CFD + automated HIL validation systems for real-time experimental control  
 
-**See full details →** [Aerodynamic Analysis](/aerodynamic-analysis) | [CFD Work](/cfd) | [Design Your Own Plane](/design-your-own-plane)
-
-### Technical Skills (CV Ready)
-**Languages & Tools:** Python, MATLAB, ROS, ANSYS Fluent, OpenFOAM, SolidWorks, LaTeX  
-**Other:** 3D printing, knowledge graphs, automated experimental setups, Git, Linux  
-
-### Education & Experience
-*(Add your real details here – I left placeholders)*  
-- M.Tech / B.Tech in Aerospace Engineering – [University Name], [Year]  
-- [Job Title] – [Company], [Dates] – Aerodynamics & CFD role  
-- [Internship / Project] – [Company], [Dates]
+**Explore my work →**  
+[CFD & Microchannel Flows](/cfd) • [Aerodynamic Analysis](/aerodynamic-analysis) • [Design Your Own Plane](/design-your-own-plane)
 
 ---
 
-**Ready to use this website for job search?**  
-Reply with **“Done”** after you commit both files.  
+**Next (after you commit both):**  
+Reply **“Done”**  
 
-Then I’ll give you:  
-- **Step 3** → Tools page (PDF merge, compress, edit – all inside your site)  
-- **Step 4** → How to add more projects/blogs easily (GitHub web editor)  
-- Any other changes you want (dark mode, better look, contact form, etc.)
+I will immediately give you:  
+- New **Tools page** (PDF merge, compress, edit — all inside your website)  
+- How to add more projects/blogs easily  
+- Any other tweaks you want (dark mode, better colors, contact form, etc.)
 
-Just say **“Done”** and we continue one by one.  
-Your site will look clean, professional and job-ready in 2 minutes. Let’s go! 🚀
+Just commit the two files above and say **“Done”**.  
+Your site will now look professional and ready for job applications! 🚀
