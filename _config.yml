@@ -1,11 +1,17 @@
-title: Santhosh Kumar Sankar | Aerospace Engineer
-description: Futuristic Aerodynamics • CFD • eVTOL R&D | 7+ years international experience | Full work rights Australia
+title: Santhosh Kumar Sankar | Engineering Portfolio
+email: santhoshaero008@gmail.com
+description: >- 
+  Aerospace & Systems Engineer specializing in Fluid Dynamics and R&D Automation.
+baseurl: "" 
+url: "https://SandeJarvis.github.io"
 
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# Markdown settings
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 
-url: "https://sandejarvis.github.io"
-baseurl: "/santhoshaero"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
