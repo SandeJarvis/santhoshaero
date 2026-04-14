@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap');
-    :root { --neon: #00f5ff; }
-    body { font-family: 'Inter', sans-serif; }
-    .title-font { font-family: 'Space Grotesk', sans-serif; }
-    .neon-text { text-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon); }
-    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
-<body class="bg-[#05080f] text-white overflow-x-hidden">
-  {{ content }}
+<body>
+    {% include header.html %}
+
+    <main>
+        {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <script>
+        // Initialize pop-ups
+        tippy('[data-tippy-content]');
+    </script>
 </body>
 </html>
